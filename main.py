@@ -36,6 +36,8 @@ if __name__ == '__main__':
     # ปรับ Filter ให้ครอบคลุม New Members และ Left Member
     # filters.StatusUpdate.NEW_CHAT_MEMBERS ครอบคลุมทั้งเข้าเองและถูกเพิ่มโดยคนอื่น
     service_filter = (filters.StatusUpdate.NEW_CHAT_MEMBERS | filters.StatusUpdate.LEFT_CHAT_MEMBER)
+    # โค้ดส่วนนี้ทำหน้าที่ดักจับทั้งคนเข้าและคนออก
+    service_filter = (filters.StatusUpdate.NEW_CHAT_MEMBERS | filters.StatusUpdate.LEFT_CHAT_MEMBER)
     
     app.add_handler(MessageHandler(service_filter, delete_service_message))
 
